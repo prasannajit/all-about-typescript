@@ -1,0 +1,31 @@
+{
+  "name": "all-about-typescript",
+  "version": "1.0.0",
+  "description": "A typescript practice project",
+  "main": "build",
+  "dependencies": {
+    "@types/node": "^16.3.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "nodemon": "^2.0.10",
+    "typescript": "^4.3.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:build": "tsc -w",
+    "start:run": "nodemon build",
+    "start": "concurrently npm:start:*",
+    "tsinit": "tsc --init"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prasannajit/all-about-typescript.git"
+  },
+  "author": "prasannajit@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prasannajit/all-about-typescript/issues"
+  },
+  "homepage": "https://github.com/prasannajit/all-about-typescript#readme"
+}
