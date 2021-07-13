@@ -3,8 +3,16 @@ type FullName = {
   lastName?: string;
 };
 
-export function addTwoNumbers(num1: number, num2: number): number {
-  return num1 + num2;
+type addParam = number | string;
+
+export function addTwoNumbers(num1: addParam, num2: addParam, resultText:'Adding Numbers'|'Adding strings'): addParam {
+  if(typeof num1 === 'string' && typeof num2==='string'){
+    return num1.toLowerCase() + num2.toLowerCase();
+  }
+  if(typeof num1 === 'number' && typeof num2==='number'){
+    return num1 + num2;
+  }
+  throw new Error(`${resultText} Cant add, types of not compatible`);
 }
 
 export const subtractTwoNumbers = (num1: number, num2: number): number => {
@@ -52,9 +60,9 @@ function getFirstElement<Type>(arr: Type[]): Type {
 }
 
 function longest<Type extends { length: number }>(a: Type, b: Type) {
-    if (a.length >= b.length) {
-      return a;
-    } else {
-      return b;
-    }
+  if (a.length >= b.length) {
+    return a;
+  } else {
+    return b;
   }
+}
