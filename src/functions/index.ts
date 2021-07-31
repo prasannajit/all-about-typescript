@@ -89,3 +89,25 @@ export function functionWithThis(this: User, txt: String): boolean {
     console.log(txt);
     return this.isAdmin;
 };
+
+// rest params
+export const RestParamsFunction = (text: string, ...m: number[]): number => {
+    console.log(text);
+    return m.length;
+}
+
+// Destructuring
+export const destructuringFunction = ({ a, b }: { a: number, b: number }) => {
+    return a + b;
+}
+
+// Literal function type with void shows error
+function f2(): void {
+    // This does not work
+    return true;
+}
+type EmptyFunc=()=>void;
+const f3:EmptyFunc =()=>{
+    //This works
+    return true;
+}
